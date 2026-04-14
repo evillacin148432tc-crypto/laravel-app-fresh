@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ideas;
 use App\Models\Post;
 use App\Models\User;
+use App\Http\Controllers\BookController;
 
 Route::get('/register', function () {
     return view('user_registration');
@@ -137,4 +138,14 @@ Route::patch('/posts/{post}', function (Post $post) {
     ]);
 
     return redirect('/posts/' . $post->id);
+
+    
 });
+
+Route::get('/books', [BookController::class, 'index'])->name('books.index');
+Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+Route::post('/books/store', [BookController::class, 'store'])->name('books.store');
+Route::get('/books/edit/{id}', [BookController::class, 'edit'])->name('books.edit');
+Route::post('/books/update/{id}', [BookController::class, 'update'])->name('books.update');
+Route::post('/books/delete/{id}', [BookController::class, 'destroy'])->name('books.delete');
+Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');

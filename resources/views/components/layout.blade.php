@@ -32,7 +32,8 @@
         <a href="/contact">Contact</a>
         <a href="/formtest">Form Test</a>
         <a href="/posts">Posts</a>
-        <a href="/register">register</a>
+        <a href="/register">Register</a>
+        <a href="/books">Book</a>
     </nav>
 {{ $slot }}
 
